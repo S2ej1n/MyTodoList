@@ -8,16 +8,15 @@ function App() {
     { id: 1, content: '뭔갈하기', finish: false },
     { id: 2, content: '마라탕먹기', finish: false },
   ]);
-  // 이거는 입력될때의 값.
-  // const [value, setValue] = useState('');
 
   // ref객체 만들기
   const valueref = useRef('');
 
   const clickSubmit = () => {
     const value = valueref.current.value;
+    console.log(value);
+    // 이 부분 렌더링 어떡하지
     if (value.length > 0) {
-      console.log(valueref.current.value);
 
       let newData = {
         id: Date.now(),
@@ -49,8 +48,6 @@ function App() {
           onClick={clickSubmit}>
           ✏️
         </button>
-        {/* 여기 값이 변경될때 값을 변경해야겠지. */}
-        {/* 값 변경될때마다 자꾸 렌더링됨 */}
         <input className={styled.todoInput}
           type="text"
           placeholder='오늘 할 일은?'
