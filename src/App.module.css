@@ -15,6 +15,7 @@
 .title{
     border-bottom: 2px solid var(--main-bg-color);
     color: rgb(96, 96, 96);
+    
 }
 
 .todoInput{
@@ -22,6 +23,7 @@
     width: 160px;
     border: 1px solid var(--main-smoke-color);
     border-radius: 50px;
+    box-shadow: 0px 5px 5px rgb(0 0 0 / 16%);
 }
 
 .todoInput:focus {
@@ -30,10 +32,11 @@
 }
 
 .todoSubmit{
-    padding: 5px;
+    padding: 5px 8px;
     margin-right: 5px;
     background-color: transparent;
     border: none;
+    border-radius: 50%;
     font-size: 18px;
     cursor: pointer;
 }

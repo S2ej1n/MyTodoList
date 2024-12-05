@@ -14,27 +14,18 @@ function App() {
   // ref객체 만들기
   const valueref = useRef('');
 
-  // const inputChange = (e) => {
-  //   setValue(e.target.value);
-  //   console.log('렌더링' + e.target.value);
-  //   console.log(valueref.current);
-  //   // console.log(ref, ref.current, ref.current.value);
-  //   // console.log(valueref.current);
-  //   // valueref.current = e.target.value;
-  // }
-
   const clickSubmit = () => {
     const value = valueref.current.value;
-    console.log(valueref.current.value);
-    let newData = {
-      id: Date.now(),
-      // content: valueref.current,
-      content: value,
-      finish: false
-    }
-    // setTodoData([...todoData, newData])
-    // valueref.current.value = '';
-    if (newData.content.length > 0) {
+    if (value.length > 0) {
+      console.log(valueref.current.value);
+
+      let newData = {
+        id: Date.now(),
+        // content: valueref.current,
+        content: value,
+        finish: false
+      }
+
       setTodoData([...todoData, newData])
       valueref.current.value = '';
     }
@@ -64,7 +55,7 @@ function App() {
           type="text"
           placeholder='오늘 할 일은?'
           ref={valueref} // 여기다가는 ref 연결해야됨. ref.crrunt말고
-          // onChange={inputChange}
+          //기존 - value={value}로 사용했지만, 이거 다 지우고 ref사용하면된다. 여기에 정보가 다 넘어감.
           onKeyUp={enterKey}
         />
 
