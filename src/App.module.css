@@ -1,0 +1,53 @@
+.App{
+    text-align: center;
+    margin: auto;
+    max-width: 600px;
+}
+
+.todoContainer{
+    padding: 30px;
+    margin-top: 50px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: -9px 17px 13px rgb(0 0 0 / 16%);
+}
+
+.title{
+    border-bottom: 2px solid var(--main-bg-color);
+    color: rgb(96, 96, 96);
+}
+
+.todoInput{
+    padding: 8px 15px;
+    width: 160px;
+    border: 1px solid var(--main-smoke-color);
+    border-radius: 50px;
+}
+
+.todoInput:focus {
+    border-color:var(--focus-input-color);
+    outline: none;
+}
+
+.todoSubmit{
+    padding: 5px;
+    margin-right: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.listContainer{
+    margin-top: 20px;
+}
+
+.todolist{
+    margin: 10px;
+}
+
+.deleteBnt{
+    border: none;
+    border-radius: 50%;
+    margin-left: 5px;
+}
