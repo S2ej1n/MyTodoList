@@ -35,8 +35,11 @@ function App() {
     }
   }
   
-  const deletehandler = () => {
+  const clickisFinish = () => {
 
+  }
+  const deletehandler = () => {
+    // 키값 비교
   }
 
   return (
@@ -63,10 +66,12 @@ function App() {
         <section className={styled.listContainer}>
           {todoData.map((data) => (
             <div className={styled.todolist} key={data.id}>
-              <input className={styled.finishBox} type='checkbox'/>
+              <input className={styled.finishBox} type='checkbox'
+                // 
+                onClick={() => {clickisFinish()}}/>
               {data.content}
               <button className={styled.deleteBnt}
-                onClick={deletehandler}>🗑️</button>
+                onClick={()=>{deletehandler(data.id)}}>🗑️</button>
             </div>
           ))}
         </section>
