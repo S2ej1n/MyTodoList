@@ -14,18 +14,17 @@ function App() {
   const valueref = useRef('');
 
   const inputChange = (e) => {
-    // setValue(e.target.value);
+    setValue(e.target.value);
     console.log('렌더링' + e.target.value);
     // console.log(valueref.current);
-    valueref.current = e.target.value;
-    // 이게아닌가..
+    // valueref.current = e.target.value;
   }
 
   const clickSubmit = () => {
     let newData = {
       id: Date.now(),
-      content: valueref.current,
-      // content: value,
+      // content: valueref.current,
+      content: value,
       finish: false
     }
     // setTodoData([...todoData, newData])
@@ -59,8 +58,8 @@ function App() {
         <input className={styled.todoInput}
           type="text"
           placeholder='오늘 할 일은?'
-          value={valueref.current}
-          // value={value}
+          // value={valueref.current}
+          value={value}
           onChange={inputChange}
           onKeyUp={enterKey}
         />
