@@ -20,7 +20,6 @@ function App() {
 
       let newData = {
         id: Date.now(),
-        // content: valueref.current,
         content: value,
         finish: false
       }
@@ -36,6 +35,10 @@ function App() {
     }
   }
   
+  const deletehandler = () => {
+
+  }
+
   return (
     <main className={styled.App}>
       <div className={styled.todoContainer}>
@@ -51,7 +54,7 @@ function App() {
         <input className={styled.todoInput}
           type="text"
           placeholder='오늘 할 일은?'
-          ref={valueref} // 여기다가는 ref 연결해야됨. ref.crrunt말고
+          ref={valueref} // 여기다가는 ref 연결해야됨. ref.crrent말고
           //기존 - value={value}로 사용했지만, 이거 다 지우고 ref사용하면된다. 여기에 정보가 다 넘어감.
           onKeyUp={enterKey}
         />
@@ -60,8 +63,10 @@ function App() {
         <section className={styled.listContainer}>
           {todoData.map((data) => (
             <div className={styled.todolist} key={data.id}>
+              <input className={styled.finishBox} type='checkbox'/>
               {data.content}
-              <button className={styled.deleteBnt}>X</button>
+              <button className={styled.deleteBnt}
+                onClick={deletehandler}>🗑️</button>
             </div>
           ))}
         </section>
