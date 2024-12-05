@@ -38,8 +38,11 @@ function App() {
   const clickisFinish = () => {
 
   }
-  const deletehandler = () => {
+  const deletehandler = (id) => {
     // 키값 비교
+    // todoData 각 배열의 항목 e에서id 속성 가져옴. 다르면 통과
+    let newData = todoData.filter((e) => e.id !== id);
+    setTodoData(newData);
   }
 
   return (
