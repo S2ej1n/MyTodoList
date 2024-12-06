@@ -75,17 +75,16 @@ function App() {
         {/* 투두리스트가 나오는 창 */}
         <section className={styled.listContainer}>
           {todoData.map((data) => (
-            <div className={styled.todolist} key={data.id}>
+            <div className={`${styled.todolist} ${data.finish ? styled.finished : ''}`} key={data.id}>
+              {/* 이부분 고침. 스타일을 다르게 하기 위해서!!!!!!!!!------- */}
               <input className={styled.finishBox} type='checkbox'
                 // 데이터 쩜 아이디 전달.
                 onClick={() => {clickisFinish(data.id)}}
                 id={`finishbox${data.id}`}
-                // 삼항연산자로 스타일 다르게 구현하기
-                
                 />
                 {/* 아이디를 다 다르게 설정해야함. */}
-              <label className={styled.finishlabel} for={`finishbox${data.id}`}>
-                🍀</label>
+              {/* <label className={styled.finishlabel} for={`finishbox${data.id}`}>
+                🍀</label> */}
               {data.content}
               <button className={styled.deleteBnt}
                 onClick={()=>{deletehandler(data.id)}}>🗑️</button>
