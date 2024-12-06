@@ -52,13 +52,13 @@
     100%{transform:translate(0,-3px);}
 }
  
- 
 .listContainer{
     margin-top: 20px;
 }
 
 .finishBox{
     margin-right: 5px;
+    /* display: none; */
 }
 
 .todolist{

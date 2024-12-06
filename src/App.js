@@ -78,7 +78,14 @@ function App() {
             <div className={styled.todolist} key={data.id}>
               <input className={styled.finishBox} type='checkbox'
                 // 데이터 쩜 아이디 전달.
-                onClick={() => {clickisFinish(data.id)}}/>
+                onClick={() => {clickisFinish(data.id)}}
+                id={`finishbox${data.id}`}
+                // 삼항연산자로 스타일 다르게 구현하기
+                
+                />
+                {/* 아이디를 다 다르게 설정해야함. */}
+              <label className={styled.finishlabel} for={`finishbox${data.id}`}>
+                🍀</label>
               {data.content}
               <button className={styled.deleteBnt}
                 onClick={()=>{deletehandler(data.id)}}>🗑️</button>
