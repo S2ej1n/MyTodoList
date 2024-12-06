@@ -85,7 +85,9 @@ function App() {
                 {/* 아이디를 다 다르게 설정해야함. */}
               <label className={styled.finishlabel} 
                 for={`finishbox${data.id}`}>
-                👌</label>
+                  {/* 바꿔줌 */}
+                  {data.finish ? '✅' : '👌'}
+                </label>
               {data.content}
               <button className={styled.deleteBnt}
                 onClick={()=>{deletehandler(data.id)}}>🗑️</button>

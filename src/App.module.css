@@ -66,10 +66,11 @@
     margin-right: 5px;
     border-radius: 40%;
     padding: 2px;
+    display: inline-block; 
+    /* 애니메이션 안들어가는이유 - display속성떄문이었음.. inline */
 }
 
 .finishlabel:hover{
-    box-shadow: 0px 5px 5px rgb(0 0 0 / 16%);
     animation: fly 0.6s infinite alternate;
 }
 
