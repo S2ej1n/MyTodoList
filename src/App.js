@@ -101,7 +101,9 @@ function App() {
                 onClick={()=>{deletehandler(data.id)}}>🗑️</button>
             </div>
           ))}
-          <p className={styled.alrltText}>* 오늘 해야할 일 {todoData.length}개 중 {how_many_finished}개를 완료했어요</p>
+          <p className={styled.alrltText}>* 오늘 해야할 일 
+            <span className={styled.alrthspan}> {todoData.length}</span>개 중 
+            <span className={styled.alrthspan}> {how_many_finished}</span>개를 완료했어요!</p>
         </section>
       </div>
     </main>
