@@ -35,8 +35,15 @@ function App() {
     }
   }
   
-  const clickisFinish = () => {
-
+  const clickisFinish = (id) => {
+    // 새로운 배열 반환할거임.
+    let newData = todoData.map((e) => {
+      if (e.id === id) {
+        e.finish =! e.finish;
+      }
+      return e;
+    })
+    setTodoData(newData);
   }
   const deletehandler = (id) => {
     // 키값 비교
@@ -70,8 +77,8 @@ function App() {
           {todoData.map((data) => (
             <div className={styled.todolist} key={data.id}>
               <input className={styled.finishBox} type='checkbox'
-                // 
-                onClick={() => {clickisFinish()}}/>
+                // 데이터 쩜 아이디 전달.
+                onClick={() => {clickisFinish(data.id)}}/>
               {data.content}
               <button className={styled.deleteBnt}
                 onClick={()=>{deletehandler(data.id)}}>🗑️</button>
