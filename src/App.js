@@ -56,6 +56,9 @@ function App() {
   const today = new Date();
   const formattedDate = `${today.getFullYear()}. ${today.getMonth() + 1}. ${today.getDate()}.`;
 
+  // 완료한거 몇개인지
+  const how_many_finished = todoData.filter((e)=>e.finish).length
+
   return (
     <main className={styled.App}>
       <div className={styled.todoContainer}>
@@ -91,13 +94,14 @@ function App() {
               <label className={styled.finishlabel} 
                 for={`finishbox${data.id}`}>
                   {/* 바꿔줌 */}
-                  {data.finish ? '🙆' : '🙅'}
+                  {data.finish ? '🙆‍♀️' : '🙅'}
                 </label>
               {data.content}
               <button className={styled.deleteBnt}
                 onClick={()=>{deletehandler(data.id)}}>🗑️</button>
             </div>
           ))}
+          <p className={styled.alrltText}>* 오늘 해야할 일 {todoData.length}개 중 {how_many_finished}개를 완료했어요</p>
         </section>
       </div>
     </main>
