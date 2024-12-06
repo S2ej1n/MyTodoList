@@ -52,11 +52,16 @@ function App() {
     setTodoData(newData);
   }
 
+  // 오늘 날짜
+  const today = new Date();
+  const formattedDate = `${today.getFullYear()}. ${today.getMonth() + 1}. ${today.getDate()}.`;
+
   return (
     <main className={styled.App}>
       <div className={styled.todoContainer}>
 
         {/* 메인 타이틀이고 */}
+        <p className={styled.dateText}>{`🗓️ ${formattedDate}`}</p>
         <h1 className={styled.title}>Todo List</h1>
 
         {/* 인풋 넣기 */}
@@ -86,7 +91,7 @@ function App() {
               <label className={styled.finishlabel} 
                 for={`finishbox${data.id}`}>
                   {/* 바꿔줌 */}
-                  {data.finish ? '✅' : '👌'}
+                  {data.finish ? '🙆' : '🙅'}
                 </label>
               {data.content}
               <button className={styled.deleteBnt}

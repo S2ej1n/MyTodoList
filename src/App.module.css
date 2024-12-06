@@ -12,6 +12,11 @@
     box-shadow: -9px 17px 13px rgb(0 0 0 / 16%);
 }
 
+.dateText{
+    color: rgb(96, 96, 96);
+    margin-bottom: -10px;
+    font-weight: 500;
+}
 .title{
     padding-bottom: 10px;
     border-bottom: 2px solid var(--main-bg-color);
